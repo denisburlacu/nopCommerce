@@ -86,7 +86,7 @@ namespace Nop.Plugin.Widgets.GoogleAnalytics
             };
             _settingService.SaveSetting(settings);
 
-            _localizationService.AddPluginLocaleResource(new Dictionary<string, string>
+            _localizationService.AddLocaleResource(new Dictionary<string, string>
             {
                 ["Plugins.Widgets.GoogleAnalytics.GoogleId"] = "ID",
                 ["Plugins.Widgets.GoogleAnalytics.GoogleId.Hint"] = "Enter Google Analytics ID.",
@@ -95,7 +95,7 @@ namespace Nop.Plugin.Widgets.GoogleAnalytics
                 ["Plugins.Widgets.GoogleAnalytics.EnableEcommerce"] = "Enable eCommerce",
                 ["Plugins.Widgets.GoogleAnalytics.EnableEcommerce.Hint"] = "Check to pass information about orders to Google eCommerce feature.",
                 ["Plugins.Widgets.GoogleAnalytics.UseJsToSendEcommerceInfo"] = "Use JS to send eCommerce info",
-                ["Plugins.Widgets.GoogleAnalytics.UseJsToSendEcommerceInfo.Hint"] = "Check to use JS code to send eCommerce info from the order completed page. But in case of redirection payment methods some customers may skip it. Otherwise, e-commerce information will be sent using HTTP request. Information is sent each time an order is paid but UTM is not supported in this mode.",
+                ["Plugins.Widgets.GoogleAnalytics.UseJsToSendEcommerceInfo.Hint"] = "Check to use JS code to send eCommerce info from the order completed page. But in case of redirection payment methods some customers may skip it. Otherwise, eCommerce information will be sent using HTTP request. Information is sent each time an order is paid but UTM is not supported in this mode.",
                 ["Plugins.Widgets.GoogleAnalytics.IncludeCustomerId"] = "Include customer ID",
                 ["Plugins.Widgets.GoogleAnalytics.IncludeCustomerId.Hint"] = "Check to include customer identifier to script.",
                 ["Plugins.Widgets.GoogleAnalytics.IncludingTax"] = "Include tax",
@@ -115,7 +115,7 @@ namespace Nop.Plugin.Widgets.GoogleAnalytics
             _settingService.DeleteSetting<GoogleAnalyticsSettings>();
 
             //locales
-            _localizationService.DeletePluginLocaleResources("Plugins.Widgets.GoogleAnalytics");
+            _localizationService.DeleteLocaleResources("Plugins.Widgets.GoogleAnalytics");
 
             base.Uninstall();
         }

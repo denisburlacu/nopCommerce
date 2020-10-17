@@ -414,14 +414,6 @@ namespace Nop.Services.Catalog
         void ReserveInventory(Product product, int quantity);
 
         /// <summary>
-        /// Balance the given quantity in the warehouses.
-        /// </summary>
-        /// <param name="product">Product</param>
-        /// <param name="warehouseId">Warehouse identifier</param>
-        /// <param name="quantity">Quantity</param>
-        void BalanceInventory(Product product, int warehouseId, int quantity);
-
-        /// <summary>
         /// Unblocks the given quantity reserved items in the warehouses
         /// </summary>
         /// <param name="product">Product</param>
@@ -697,7 +689,7 @@ namespace Nop.Services.Catalog
         /// </summary>
         /// <param name="productReviewIds">Product review identifiers</param>
         /// <returns>Product reviews</returns>
-        IList<ProductReview> GetProducReviewsByIds(int[] productReviewIds);
+        IList<ProductReview> GetProductReviewsByIds(int[] productReviewIds);
 
         /// <summary>
         /// Inserts a product review
@@ -749,6 +741,14 @@ namespace Nop.Services.Catalog
         /// </summary>
         /// <param name="productReview">Product review</param>
         void UpdateProductReview(ProductReview productReview);
+
+        /// <summary>
+        /// Check possibility added review for current customer
+        /// </summary>
+        /// <param name="productId">Current product</param>
+        /// <param name="storeId">The store identifier; pass 0 to load all records</param>
+        /// <returns></returns>
+        bool CanAddReview(int productId, int storeId = 0);
 
         #endregion
 
